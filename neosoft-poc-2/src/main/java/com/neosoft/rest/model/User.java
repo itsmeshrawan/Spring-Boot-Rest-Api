@@ -16,6 +16,8 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import com.neosoft.rest.annotation.PasswordValueMatch;
 import com.neosoft.rest.annotation.ValidPassword;
 import com.neosoft.rest.util.Auditable;
@@ -53,11 +55,13 @@ public class User extends Auditable<String> {
 	private String secondaryEmail;
 
 	@ValidPassword
+	@JsonProperty(access = Access.WRITE_ONLY)
 	@NotBlank(message = "Password should not be empty")
 	@Size(min = 5, max = 30, message = "Password should have atleast {min}-{max} characters")
 	private String password;
 	
 	@ValidPassword
+	@JsonProperty(access = Access.WRITE_ONLY)
 	@Transient
 	private String confirmPassword;
 

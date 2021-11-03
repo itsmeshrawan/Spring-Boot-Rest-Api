@@ -9,10 +9,10 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
 @SpringBootApplication
-public class NeosoftPoc2Application {
+public class NeosoftPoc1Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NeosoftPoc2Application.class, args);
+		SpringApplication.run(NeosoftPoc1Application.class, args);
 	}
 
 	// Configuration for Swagger
